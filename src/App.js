@@ -1,26 +1,20 @@
+// in src/App.js
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import { Admin, Resource, ListGuesser, ShowGuesser } from 'react-admin';
+import { Admin, Resource} from 'react-admin';
+import { BackupList, BackupShow } from './backups';
+import jsonServerProvider from 'ra-data-json-server';
+import authProvider from './authProvider';
+import customRoutes from './customRoutes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+
+const dataProvider = jsonServerProvider('http://192.168.0.185:3001');
+// const dataProvider = jsonServerProvider('https://58bnpw06gh.execute-api.us-east-1.amazonaws.com/Prod');
+const App = () => (
+  <Admin  customRoutes={customRoutes} dataProvider={dataProvider} authProvider={authProvider}>
+
+    <Resource name="backups" list={BackupList} show={BackupShow}/>
+  </Admin>
+);
 export default App;
