@@ -1,3 +1,17 @@
+## Change user role
+https://stackoverflow.com/questions/40845937/aws-user-pool-how-to-edit-user-attributes
+
+```
+aws cognito-idp admin-update-user-attributes \
+    --user-pool-id xxx \
+    --username yyy \
+    --user-attributes Name="custom:role",Value="user"
+```
+Sample:
+```
+aws cognito-idp admin-update-user-attributes --profile juanlb --region us-east-1  --user-pool-id us-east-1_oDBCRdBh7 --username juanlb --user-attributes Name="custom:role",Value="user"
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

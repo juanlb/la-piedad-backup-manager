@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import CognitoManager from './CognitoManager';
+import CognitoCallback from './CognitoCallback';
 
 
 export default [
-    <Route path="/(access_token.*)" component={CognitoManager} />,
+    <Route path="/(id_token.*)" component={CognitoCallback} />,
 ];
