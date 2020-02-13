@@ -11,9 +11,9 @@ const NullLoginPage = () => {
 
     return (
         <Card>
-            <Title title="My Page" />
+            <Title title="Redirecting" />
             <CardContent>
-                Logging out...
+                Redirecting...
             </CardContent>
         </Card>
     )
